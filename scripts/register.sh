@@ -16,3 +16,5 @@ tar xzf ./actions-runner-linux-x64-2.165.2.tar.gz
 
 ### Configure the runner ###
 ./config.sh --url ${GITHUB_REPO_URL} --token $REGISTRATION_TOKEN
+# start the runner
+./run.sh
