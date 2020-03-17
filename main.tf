@@ -23,7 +23,7 @@ data "template_cloudinit_config" "script" {
 }
 
 resource "digitalocean_droplet" "runner" {
-  name      = "${var.project}-self-hosted-runner-${format("%02d", count.index + 1)}"
+  name      = "${var.github_repo_name}-self-hosted-runner-${format("%02d", count.index + 1)}"
   count     = "${var.runner_node_count}"
   size      = "${var.node_size}"
   image     = "${var.ubuntu}"
