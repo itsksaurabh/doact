@@ -2,9 +2,6 @@
 set -Eeuo pipefail
 #set -Eeuxo pipefail
 
-# Create a registration token using Github REST API v3
-REGISTRATION_TOKEN=""
-
 ### Download the runner ###
 # Create a folder
 mkdir actions-runner && cd actions-runner
@@ -15,6 +12,6 @@ tar xzf ./actions-runner-linux-x64-2.165.2.tar.gz
 
 
 ### Configure the runner ###
-./config.sh --url ${GITHUB_REPO_URL} --token $REGISTRATION_TOKEN
+./config.sh --url https://github.com/${GITHUB_USER}/${GITHUB_REPO_NAME} --token $REGISTRATION_TOKEN
 # start the runner
 ./run.sh
