@@ -29,11 +29,17 @@ variable "region" {
   default     = "blr1"
 }
 
-variable "project" {
-  description = "Project name used for resource naming."
+variable "github_username" {
+  description = "Github Username."
   type        = "string"
 }
 
-variable "github_repo_url" {
-  description = "URL of the target Github repo."
+variable "github_repo_name" {
+  description = "Name of the target repository."
+  type        = "string"
+}
+
+variable "github_access_token" {
+  description = "Personal access token for the admin access to the repository"
+  type        = "string"
 }
