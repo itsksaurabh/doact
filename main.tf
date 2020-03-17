@@ -4,6 +4,10 @@
 # Render registration.sh using a `template_file`
 data "template_file" "reg_script" {
   template = "${file("./scripts/register.sh")}"
+
+   vars {
+    GITHUB_REPO_URL = "${var.github_repo_url}"
+  }
 }
 
 data "template_cloudinit_config" "script" {
