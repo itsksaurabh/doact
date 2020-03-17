@@ -6,7 +6,9 @@ data "template_file" "reg_script" {
   template = "${file("./scripts/register.sh")}"
 
    vars {
-    GITHUB_REPO_URL = "${var.github_repo_url}"
+    GITHUB_ACCESS_TOKEN = "${var.github_access_token}"
+    GITHUB_USERNAME     = "${var.github_username}"
+    GITHUB_REPO_NAME    = "${var.github_repo_name}"
   }
 }
 
