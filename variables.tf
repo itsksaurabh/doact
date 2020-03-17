@@ -33,3 +33,7 @@ variable "project" {
   description = "Project name used for resource naming."
   type        = "string"
 }
+
+variable "github_repo_url" {
+  description = "URL of the target Github repo."
+}
