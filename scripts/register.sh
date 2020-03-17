@@ -6,7 +6,7 @@ set -Eeuo pipefail
 temp=$(curl -XPOST \
 -H "Accept: application/vnd.github.v3+json" \
 -H "authorization: Bearer ${GITHUB_ACCESS_TOKEN}" \
-"https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO_NAME}/actions/runners/registration-token")
+"https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO_NAME}/actions/runners/registration-token")
 
 # Extract token value from the response
 REGISTRATION_TOKEN=$(echo $temp | grep "token" | awk '{print $2}'| awk -F , '{print $1 }')
@@ -19,6 +19,6 @@ curl -O -L https://github.com/actions/runner/releases/download/v2.165.2/actions-
 tar xzf ./actions-runner-linux-x64-2.165.2.tar.gz
 
 # Configure the runner
-./config.sh --url https://github.com/${GITHUB_USER}/${GITHUB_REPO_NAME} --token $REGISTRATION_TOKEN
+./config.sh --url https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO_NAME} --token $REGISTRATION_TOKEN
 # start the runner
 ./run.sh
