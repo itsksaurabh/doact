@@ -5,6 +5,8 @@ set -Eeuo pipefail
 # Add non-root user non-interactively
 # Use the --gecos option to skip the chfn interactive part.
 adduser --disabled-password --gecos "" doact
+# login as new non-root user
+su - doact
 
 # Create a registration token using Github REST API v3
 temp=$(curl -XPOST \
