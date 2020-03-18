@@ -3,7 +3,7 @@
 
 # Render registration.sh using a `template_file`
 data "template_file" "reg_script" {
-  template = "${file("./scripts/register.sh")}"
+  template = "${file("./templates/register.sh.tpl")}"
 
    vars {
     GITHUB_ACCESS_TOKEN = "${var.github_access_token}"
