@@ -9,7 +9,7 @@ temp=$(curl -XPOST \
 "https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO_NAME}/actions/runners/registration-token")
 
 # Extract token value from the response
-REGISTRATION_TOKEN=$(echo $temp | grep "token" | awk '{print $2}'| awk -F , '{print $1 }' | sed 's/"//g')
+REGISTRATION_TOKEN=$(echo $temp | grep "token" | awk '{print $3}'| awk -F , '{print $1 }' | sed 's/"//g')
 
 # Create a folder
 mkdir actions-runner && cd actions-runner
