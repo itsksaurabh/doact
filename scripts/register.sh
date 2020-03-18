@@ -2,11 +2,11 @@
 set -Eeuo pipefail
 #set -Eeuxo pipefail
 
-# Add non-root user non-interactively
+# Add non-root user non-interactively if not present
 # Use the --gecos option to skip the chfn interactive part.
-adduser --disabled-password --gecos "" doact
+id -u doactuser &>/dev/null || adduser --disabled-password --gecos "" doactuser
 # login as new non-root user
-su - doact
+su - doactuser
 
 # Create a registration token using Github REST API v3
 temp=$(curl -XPOST \
@@ -25,6 +25,6 @@ curl -O -L https://github.com/actions/runner/releases/download/v2.165.2/actions-
 tar xzf ./actions-runner-linux-x64-2.165.2.tar.gz
 
 # Configure the runner
-./config.sh --url https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO_NAME} --token $REGISTRATION_TOKEN
+./config.sh --url https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO_NAME} --token $REGISTRATION_TOKEN <<< $'\n\n' &
 # start the runner
 ./run.sh
