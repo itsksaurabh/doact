@@ -20,7 +20,7 @@ variable "ubuntu" {
 variable "node_size" {
   description = "Selected size for your provisioned Droplets."
   type        = "string"
-  default     = "512mb"
+  default     = "1gb"
 }
 
 variable "region" {
