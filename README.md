@@ -45,7 +45,8 @@ The module requires Github personal access token for the admin access to the rep
  ## Usage ⚙️
 ---
 
-Paste your SSH Public Key inside the file [user_id_rsa.pub](ssh-keys/user_id_rsa.pub)
+Paste your SSH Public Key inside the file [user_id_rsa.pub](./ssh-keys/user_id_rsa.pub).
+Update the values inside [terraform.tfvars](./terraform.tfvars) file for better experience.
 
 Run the following commands to use the module:
 
@@ -96,3 +97,7 @@ I welcome pull requests, bug fixes and issue reports. Before proposing a change,
 
 # Maintainer 😎
 [Kumar Saurabh](https://in.linkedin.com/in/itsksaurabh)
+
+## License
+
+[MIT](LICENSE) © Kumar Saurabh
