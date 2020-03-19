@@ -1,5 +1,7 @@
 <div style="text-align:center"><img  width="250" src="./assets/logo.png" /></div>
 
+[![itsksaurabh](https://github.com/itsksaurabh/doact/workflows/Go/badge.svg)]()
+
 ## What is Doact? 🚀
 
 **Doact** is a [Terraform](https://www.terraform.io/) module to automate the deployment and hosting process of your own runners on [Digital Ocean](https://m.do.co/c/3bc2250b7076) cloud to run jobs in your [GitHub Actions](https://github.com/features/actions) workflows. It makes it easy to automate all your software workflows, now with world-class CI/CD. Build, test, and deploy your code right from GitHub. 
