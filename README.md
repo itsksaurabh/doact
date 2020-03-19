@@ -1,17 +1,17 @@
 <div style="text-align:center"><img  width="250" src="./assets/logo.png" /></div>
 
 ## What is Doact? 🚀
----
+
 **Doact** is a [Terraform](https://www.terraform.io/) module to automate the deployment and hosting process of your own runners on [Digital Ocean](https://m.do.co/c/3bc2250b7076) cloud to run jobs in your [GitHub Actions](https://github.com/features/actions) workflows. It makes it easy to automate all your software workflows, now with world-class CI/CD. Build, test, and deploy your code right from GitHub. 
 ##  Why Doact? 🧐
----
+
 Doact sets up a self-hosted runner on the cloud. Self-hosted runners offer more control of hardware, operating system, and software tools than GitHub-hosted runners provide. With self-hosted runners, you can choose to create a custom hardware configuration with more processing power or memory to run larger jobs, install software available on your local network, and choose an operating system not offered by GitHub-hosted runners.
 You can read more about self-hosted runner [here](https://help.github.com/en/actions/hosting-your-own-runners/about-self-hosted-runners).
 
 > **Note**: Currently doact supports machines with Linux X64 architecture.
 
 ## Prerequisites ✅
----
+
 **Terraform** 
 
 Ensure you have [Terraform](https://www.terraform.io/) installed. A handy tool to manage your Terraform version is [tfenv](https://github.com/kamatama41/tfenv).
@@ -43,7 +43,6 @@ The module requires Github personal access token for the admin access to the rep
  You can generate your own SSH Public Key by following this [tutorial](https://git-scm.com/book/en/v2/Git-on-the-Server-Generating-Your-SSH-Public-Key).
  
  ## Usage ⚙️
----
 
 Paste your SSH Public Key inside the file [user_id_rsa.pub](./ssh-keys/user_id_rsa.pub).
 Update the values inside [terraform.tfvars](./terraform.tfvars) file for better experience.
@@ -93,9 +92,11 @@ $ terraform destroy
 | runner-name | Name of the Runner |
 
 # Contributing 🍻
+
 I welcome pull requests, bug fixes and issue reports. Before proposing a change, please discuss your change by raising an issue.
 
 # Maintainer 😎
+
 [Kumar Saurabh](https://in.linkedin.com/in/itsksaurabh)
 
 ## License
