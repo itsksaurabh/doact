@@ -6,6 +6,10 @@ set -Eeuo pipefail
 # Use the --gecos option to skip the chfn interactive part.
 id -u doactuser &>/dev/null || adduser --disabled-password --gecos "" doactuser
 
+# Create folder 
+mkdir -p ~/doact
+cd ~/doact
+
 # create a script for non-root user
 cat << 'EOF' > ./script.sh
 #!/bin/bash
@@ -30,20 +34,20 @@ tar xzf ./actions-runner-linux-x64-2.165.2.tar.gz
 
 # Configure the runner
 ./config.sh --url https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO_NAME} --token $REGISTRATION_TOKEN <<< $'\n\n' 
-# start the runner
-./run.sh
-exit
 EOF
 
+# give permission to user to access /root
+setfacl -Rm u:doactuser:rwx /root
 # add the execute permission
-chmod +x script.sh
+chmod +x ./script.sh
 
 # run script.sh with non-root user
-su doactuser -c "./script.sh"
-# clean up
-rm /root/script.sh
+su doactuser ./script.sh
 
-# Install runner service as Root or specified user
+# clean up files with sensitive data
+rm script.sh
+
+# Install runner service as Root and start the runner service
+cd actions-runner
 ./svc.sh install
-# start the runner service
 ./svc.sh start
