@@ -30,6 +30,8 @@ Next install a Terraform version.
 $ tfenv install <version>
 ```
 
+> **Note**: doact is written to work with Terraform 0.11.x - it will not run on 0.12.x
+
 **DigitalOcean Personal Access Token**
 
 This module uses DigitalOcean (DO) provider is used to interact with the resources supported by DigitalOcean. The provider needs to be configured with the proper credentials before it can be used. Check [Terraform DigitalOcean Provider](https://www.terraform.io/docs/providers/do/index.html) for more detailed usage and examples.
@@ -54,7 +56,7 @@ Run the following commands to use the module:
 
 To initialize Terraform:
 ```bash
-$ terraform init  
+$ terraform init
 ```
 To inspect the resources that will be created:
 
@@ -71,6 +73,7 @@ To delete the runner :
 ```bash
 $ terraform destroy
 ```
+
 > **Note**: The above command will use the default values defined inside [variables.tf](./variables.tf) file. You can change the values if required.
 
 **Terraform Inputs**
