@@ -35,7 +35,9 @@ $ tfenv install <version>
 **DigitalOcean Personal Access Token**
 
 This module uses DigitalOcean (DO) provider is used to interact with the resources supported by DigitalOcean. The provider needs to be configured with the proper credentials before it can be used. Check [Terraform DigitalOcean Provider](https://www.terraform.io/docs/providers/do/index.html) for more detailed usage and examples.
-To generate a personal access token, follow this [tutorial](https://www.digitalocean.com/docs/apis-clis/api/create-personal-access-token/).
+To generate a personal access token, follow this [tutorial](https://www.digitalocean.com/docs/apis-clis/api/create-personal-access-token/). 
+
+> **Note**: Access tokens require repo scope for private repos and public_repo scope for public repos. 
 
 **Github personal access token**
 
