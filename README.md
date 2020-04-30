@@ -50,8 +50,6 @@ The module requires Github personal access token for the admin access to the rep
  
  ## Usage ⚙️
 
-Paste your SSH Public Key inside the file [user_id_rsa.pub](./ssh-keys/user_id_rsa.pub).
-
 Update the values inside [terraform.tfvars](./terraform.tfvars) file for better experience.
 
 Run the following commands to use the module:
@@ -77,6 +75,12 @@ $ terraform destroy
 ```
 
 > **Note**: The above command will use the default values defined inside [variables.tf](./variables.tf) file. You can change the values if required.
+
+**Optional**
+
+The [ssh-keys](./ssh-keys/) module has been added with Docat v2.x.x to make it easier to deploy your SSH Key on Digital Ocean.
+Just Paste your SSH Public Key inside the file [user_id_rsa.pub](./ssh-keys/user_id_rsa.pub) and peroform the above actions.
+
 
 **Terraform Inputs**
 
