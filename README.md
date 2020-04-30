@@ -94,6 +94,7 @@ Just Paste your SSH Public Key inside the file [user_id_rsa.pub](./ssh-keys/user
 | region | Selected data center. | string | `"blr1"` | no |
 | runner\_node\_count | Number of runner Droplets to provision. | string | `"1"` | no |
 | ubuntu | Default Ubuntu LTS image. | string | `"ubuntu-18-04-x64"` | no |
+|ssh\_key\_ids | A list of SSH IDs or fingerprints to enable in the format ["12345", "123456"] | list| n/a | yes |
 
 **Terraform Outputs**
 
