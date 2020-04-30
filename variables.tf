@@ -43,3 +43,8 @@ variable "github_access_token" {
   description = "Personal access token for the admin access to the repository"
   type        = "string"
 }
+
+variable "ssh_key_ids" {
+  type = "list"
+  description = "A list of SSH IDs or fingerprints to enable in the format [12345, 123456]"
+}
